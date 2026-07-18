@@ -761,6 +761,7 @@ do
   -- You can press `g?` for help in this menu.
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
+    'codelldb'
     -- You can add other tools here that you want Mason to install
   })
 
@@ -798,6 +799,7 @@ do
     },
     -- You can also specify external formatters in here.
     formatters_by_ft = {
+      cpp = { 'clang-format' }
       -- rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
@@ -976,6 +978,8 @@ do
   require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   require 'custom.plugins'
+  require 'custom.general'
+  require 'custom.custom_keymaps'
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
